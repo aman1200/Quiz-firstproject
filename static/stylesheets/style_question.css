@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@500&display=swap');
+
+html{
+    font-size: 15px;
+}
+
+/* Utils */
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */ }
+
+.top{
+    margin-bottom: 4vh;
+    height: 50px;
+}
+
+.top .navbar{
+    width: 100%;
+}
+
+body{
+    background-color:#faaf45;
+    color: #fff;
+    font-family: 'Baloo Tammudu 2', cursive;}
+
+.Total_Question {
+    display: flex;
+    justify-content: center;
+}
+
+.Total_Question h1{
+    font-size: 3.75rem;
+    text-align: center;
+    max-width: 80vw;
+}
+
+.question-body{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    border-radius: 5px;
+    border: 10px solid #07e1e8;
+    padding: 5vh 2vw;
+    background-color: #fff;
+    color: #000;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 6vh;
+    width: 90vw;
+}   
+/* Options and its buttons */
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 40vh;
+}
+input[type='checkbox'][name='optionGroup'] { display:none; }
+.options label {
+    display:flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 1rem 0.5rem 1rem 0.5rem;
+    padding-top: 1.5vh;
+    text-align: center;
+    border:5px solid lightblue;
+    color: black;
+    border-radius:3px;
+    background-color:white;
+    width: 50vw;}
+.options label:hover{
+    background-color:lightblue;
+    transform: scale(105%);
+    padding-top: 2.1vh;
+    transition-duration: 100ms;
+    cursor: pointer;
+    color: white;}
+/* Clicking a label will select its corresponding hidden radio button
+   We can select that radio buttons sibling label and style it. */
+input[type='checkbox'][name='optionGroup']:checked + label { 
+    border: none;
+    color: white;
+    background-color:rgb(13, 214, 80)!important;
+    transform: none;}
+
+/* Main Navigation through Questions including Pager */
+.navig{
+    display: flex;
+    padding-bottom: 2vh;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+.nb{
+    margin:auto 10px;
+    border-radius: 10%;
+    padding:1vh 2vw;
+    font-size: 1rem;
+    background-color: white;}
+
+#nbp{
+    color:rgb(212, 53, 53);
+    margin-right: auto;
+    border: 3px solid rgb(212, 53, 53)}
+#prev{
+    color: inherit;}
+#nbp:hover{
+    color: white;
+    cursor: pointer;
+    background-color: rgb(212, 53, 53);}
+#nbp:active{
+    background-color: white;
+    transform: translateY(4px);
+    color:rgb(212, 53, 53);}
+
+#nbn{
+    color: rgb(31, 117, 197);
+    margin-left: auto;
+    border: 3px solid rgb(31, 117, 197)}
+#next{
+    color: inherit;}
+#nbn:hover{
+    color: white;
+    cursor: pointer;
+    background-color: rgb(31, 117, 197);}
+#nbn:active{
+    background-color: white;
+    transform: translateY(4px);
+    color: rgb(31, 117, 197);} 
+
+.nb span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;}
+#prev span:before {
+    content: '\00AB';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: +20px;
+    transition: 0.5s;}
+#prev:hover span {
+    padding-left: 25px;}
+#prev:hover span:before{
+    opacity: 1;
+    left: 0;}
+
+#next span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;}
+#next:hover span {
+    padding-right: 25px;}
+#next:hover span:after {
+    opacity: 1;
+    right: 0;}
+
+.pagination{margin:auto;}
+.pagination a{
+    color: black;
+    background-color: white;
+    font-size: 1rem;
+    float: left;
+    border-radius: 10%;
+    text-decoration: none;
+    padding: 0px 20px 0px 20px;
+    border: 3px solid black;
+    margin : 0 5px;}
+.pagination a:hover{
+    background-color: #4CAF50;}
+
+.pagination a.active{
+    background-color: #4CAF50;
+    transform: translateY(-2px);}
+.nb a{
+    width: 100%;
+    outline: 0;}
+
+
+@media only screen and (max-width: 600px){
+    html{
+        font-size: 1.5vh;
+    }
+    .nb{
+        margin:auto 10px;
+        border-radius: 10%;
+        padding: 5px 4px;
+        font-size: 1rem;
+    }
+    .pagination a{
+        font-size: 1rem;
+        height: 23.2px;
+        padding:2px 5px;
+        word-wrap:break-word;
+    }
+    .options label{
+        width: 80vw;
+        padding:0.25rem;
+    }
+}
