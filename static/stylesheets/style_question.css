@@ -94,6 +94,7 @@ input[type='checkbox'][name='optionGroup']:checked + label {
     position: absolute;
     width: 100%;
     bottom: 0px;
+    margin-bottom: -170px;
 }
 .nb{
     margin:auto 10px;
@@ -184,6 +185,8 @@ input[type='checkbox'][name='optionGroup']:checked + label {
     width: 100%;
     outline: 0;}
 
+/**************Media Query****************/
+
 
 @media only screen and (max-width: 600px){
     html{
@@ -204,5 +207,9 @@ input[type='checkbox'][name='optionGroup']:checked + label {
     .options label{
         width: 80vw;
         padding:0.25rem;
+    }
+
+    .navig{
+        margin-bottom: auto;
     }
 }
